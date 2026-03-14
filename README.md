@@ -1,16 +1,203 @@
-# React + Vite
+# 📸 Photo Gallery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive **Photo Gallery Web App** built using **React + Vite +
+Tailwind CSS**. The application fetches photos from the Picsum API,
+displays them in a responsive grid, allows searching by author name, and
+lets users mark photos as favourites.
 
-Currently, two official plugins are available:
+------------------------------------------------------------------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+-   Fetch photos from a public API
+-   Responsive photo grid layout
+-   Search photos by author name
+-   Mark/unmark photos as favourites
+-   Favourite photos persist after page refresh using localStorage
+-   Loading spinner while fetching data
+-   Error handling if API fails
+-   Clean and modular React architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+------------------------------------------------------------------------
 
-## Expanding the ESLint configuration
+## 🖼️ Application Screenshot
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![App Screenshot](./screenshot.png)
+
+------------------------------------------------------------------------
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+-   React (Vite)
+-   Tailwind CSS
+
+### React Hooks Used
+
+-   useState
+-   useReducer
+-   useEffect
+-   useCallback
+-   useMemo
+
+------------------------------------------------------------------------
+
+## 📦 API Used
+
+Picsum Photos API
+
+    https://picsum.photos/v2/list?limit=30
+
+This API returns a list of images along with metadata like author name
+and image URL.
+
+------------------------------------------------------------------------
+
+## 📂 Project Structure
+
+    src
+    │
+    ├── components
+    │   ├── gallery
+    │   │   ├── PhotoCard.jsx
+    │   │   ├── PhotoGrid.jsx
+    │   │   └── SearchBar.jsx
+    │   │
+    │   ├── layout
+    │   │   ├── Navbar.jsx
+    │   │   └── Footer.jsx
+    │   │
+    │   └── ui
+    │       ├── Loader.jsx
+    │       ├── ErrorMessage.jsx
+    │       └── ImageSkeleton.jsx
+    │
+    ├── hooks
+    │   └── useFetchPhotos.js
+    │
+    ├── reducers
+    │   └── favouritesReducer.js
+    │
+    ├── pages
+    │   └── GalleryPage.jsx
+    │
+    ├── App.jsx
+    ├── main.jsx
+    └── index.css
+
+------------------------------------------------------------------------
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+``` bash
+git clone https://github.com/your-username/photo-gallery.git
+```
+
+### 2. Navigate to the project directory
+
+``` bash
+cd photo-gallery
+```
+
+### 3. Install dependencies
+
+``` bash
+npm install
+```
+
+### 4. Start the development server
+
+``` bash
+npm run dev
+```
+
+The application will run at:
+
+    http://localhost:5173
+
+------------------------------------------------------------------------
+
+## 📌 Key Implementation Details
+
+### Custom Hook
+
+`useFetchPhotos`
+
+This hook is responsible for:
+
+-   Fetching photos from the API
+-   Managing loading state
+-   Handling API errors
+
+The hook returns:
+
+    photos
+    loading
+    error
+
+------------------------------------------------------------------------
+
+### useReducer for Favourites
+
+The favourites state is managed using **useReducer** instead of
+useState.
+
+Reducer actions:
+
+    TOGGLE_FAV
+
+When a user clicks the heart icon:
+
+-   The photo is added to favourites
+-   Clicking again removes it
+
+Favourite photos are saved in **localStorage**, so they persist even
+after refreshing the page.
+
+------------------------------------------------------------------------
+
+### Performance Optimization
+
+#### useCallback
+
+Used for the search handler to prevent unnecessary re-renders when
+passing the function to child components.
+
+#### useMemo
+
+Used to compute the filtered photo list efficiently.
+
+Filtering runs only when:
+
+-   photos change
+-   search query changes
+
+------------------------------------------------------------------------
+
+## 🎯 Assignment Requirements Covered
+
+✔ React + Vite project setup\
+✔ Tailwind CSS styling\
+✔ Fetch photos from API\
+✔ Responsive grid layout\
+✔ Real-time search filter\
+✔ useReducer for favourites\
+✔ localStorage persistence\
+✔ Custom hook for API logic\
+✔ useCallback and useMemo usage
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+Built by **Lalit (Lucky)** as part of a **Frontend React Internship
+Assignment**.
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+This project is created for educational and assignment purposes.
