@@ -1,4 +1,4 @@
-# 📸 Photo Gallery App
+#  Photo Gallery App
 
 A responsive **Photo Gallery Web App** built using **React + Vite +
 Tailwind CSS**. The application fetches photos from the Picsum API,
@@ -7,7 +7,7 @@ lets users mark photos as favourites.
 
 ------------------------------------------------------------------------
 
-## 🚀 Features
+##  Features
 
 -   Fetch photos from a public API
 -   Responsive photo grid layout
@@ -26,7 +26,7 @@ lets users mark photos as favourites.
 
 ------------------------------------------------------------------------
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -43,7 +43,7 @@ lets users mark photos as favourites.
 
 ------------------------------------------------------------------------
 
-## 📦 API Used
+##  API Used
 
 Picsum Photos API
 
@@ -88,7 +88,7 @@ and image URL.
 
 ------------------------------------------------------------------------
 
-## ⚙️ Installation
+##  Installation
 
 ### 1. Clone the repository
 
@@ -177,23 +177,9 @@ Filtering runs only when:
 
 ------------------------------------------------------------------------
 
-## 🎯 Assignment Requirements Covered
-
-✔ React + Vite project setup\
-✔ Tailwind CSS styling\
-✔ Fetch photos from API\
-✔ Responsive grid layout\
-✔ Real-time search filter\
-✔ useReducer for favourites\
-✔ localStorage persistence\
-✔ Custom hook for API logic\
-✔ useCallback and useMemo usage
-
-------------------------------------------------------------------------
-
 ## 👨‍💻 Author
 
-Built by **Lalit (Lucky)** as part of a **Frontend React Internship
+Built by **Lalit Mehra** as part of a **Frontend React Internship
 Assignment**.
 
 ------------------------------------------------------------------------
