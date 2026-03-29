@@ -1,4 +1,4 @@
-#  Photo Gallery App
+<!-- #  Photo Gallery App
 
 A responsive **Photo Gallery Web App** built using **React + Vite +
 Tailwind CSS**. The application fetches photos from the Picsum API,
@@ -186,4 +186,180 @@ Assignment**.
 
 ## 📄 License
 
-This project is created for educational and assignment purposes.
+This project is created for educational and assignment purposes. -->
+
+
+#  Photo Gallery App
+
+A modern and responsive **Photo Gallery Web Application** built using **React, Vite, and Tailwind CSS**.  
+This app fetches high-quality images from the Picsum API, displays them in a responsive grid, and allows users to search and manage their favourite photos.
+
+---
+
+##  Features
+
+-  Fetch photos from a public API (Picsum)
+-  Fully responsive grid layout
+-  Search photos by author name
+-  Mark and unmark photos as favourites
+-  Persist favourites using **localStorage**
+-  Loading spinner for better UX
+-  Error handling for API failures
+-  Clean, modular, and scalable React architecture
+
+---
+
+##  Application Preview
+
+![App Screenshot](./screenshot.png)
+
+---
+
+##  Tech Stack
+
+### Frontend
+- React (Vite)
+- Tailwind CSS
+
+### React Hooks Used
+- `useState`
+- `useReducer`
+- `useEffect`
+- `useCallback`
+- `useMemo`
+
+---
+
+##  API Used
+
+**Picsum Photos API**  
+https://picsum.photos/v2/list?limit=30  
+
+Provides a collection of images with metadata such as author name and image URLs.
+
+---
+
+##  Project Structure
+
+```
+src
+│
+├── components  
+│   ├── gallery  
+│   │   ├── PhotoCard.jsx  
+│   │   ├── PhotoGrid.jsx  
+│   │   └── SearchBar.jsx  
+│   │  
+│   ├── layout  
+│   │   ├── Navbar.jsx  
+│   │   └── Footer.jsx  
+│   │  
+│   └── ui  
+│       ├── Loader.jsx  
+│       ├── ErrorMessage.jsx  
+│       └── ImageSkeleton.jsx  
+│  
+├── hooks  
+│   └── useFetchPhotos.js  
+│  
+├── reducers  
+│   └── favouritesReducer.js  
+│  
+├── pages  
+│   └── GalleryPage.jsx  
+│  
+├── App.jsx  
+├── main.jsx  
+└── index.css  
+```
+
+---
+
+##  Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/photo-gallery.git
+```
+
+### 2. Navigate to project folder
+```bash
+cd photo-gallery
+```
+
+### 3. Install dependencies
+```bash
+npm install
+```
+
+### 4. Run the development server
+```bash
+npm run dev
+```
+
+App will run at:  
+ http://localhost:5173
+
+---
+
+##  Key Implementation Details
+
+###  Custom Hook: `useFetchPhotos`
+
+Handles:
+- API data fetching
+- Loading state management
+- Error handling
+
+Returns:
+```js
+photos, loading, error
+```
+
+---
+
+###  State Management with `useReducer`
+
+Used for managing favourites efficiently.
+
+**Action:**
+- `TOGGLE_FAV`
+
+✔ Adds photo to favourites  
+✔ Removes photo on second click  
+✔ Syncs with `localStorage` for persistence  
+
+---
+
+###  Performance Optimization
+
+#### `useCallback`
+Prevents unnecessary re-renders when passing functions to child components.
+
+#### `useMemo`
+Optimizes filtering logic by recalculating only when dependencies change:
+- photos
+- search query
+
+---
+
+##  Future Improvements
+
+- Add category-based filtering  
+- Dark mode support  
+- Improve mobile UX further  
+- Pagination or infinite scrolling  
+- User authentication for saving favourites  
+
+---
+
+##  Author
+
+Developed by **Lalit Mehra**  
+ Aspiring **Full Stack Developer**
+
+---
+
+##  License
+
+This project is built for **learning and internship assignment purposes**.
